@@ -7,11 +7,11 @@ const Loader = ({ isLoading }) => {
       id="loader"
       className="d-flex justify-content-center align-items-center flex-column"
     >
-      <img
+      {/* <img
         src="https://www.sms2010.co.il/new_site/media/SMS_logo.png"
         alt=""
         className="mb-5 App-logo"
-      />
+      /> */}
       <p>Loading...</p>
     </div>
   );
