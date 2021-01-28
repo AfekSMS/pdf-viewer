@@ -9,11 +9,14 @@ const PDFReader = () => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setisLoading] = useState(true);
-  //const [showFile, setshowFile] = useState(true);
+  const [showFile, setshowFile] = useState(null);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
     setisLoading(false);
+  }
+  function onClickLoadPage() {
+    setshowFile("/assets/docs/file-sample.pdf");
   }
 
   //const showFile = () => {};
@@ -33,33 +36,33 @@ const PDFReader = () => {
       <nav>
         <ul>
           <li>
-            <a onClick={onDocumentLoadSuccess} href="#section-1">
-              file Name
+            <a
+              className="file-button"
+              onClick={onClickLoadPage}
+              href="#section-1"
+            >
+              <i className="far fa-file-pdf"> file Name</i>
             </a>
           </li>
           <li>
-            <a href="#section-2">Section 2</a>
+            <a className="file-button" href="#section-1">
+              <i className="far fa-file-pdf"> file Name</i>
+            </a>
           </li>
           <li>
-            <a href="#section-3">Section 3</a>
+            <a className="file-button" href="#section-1">
+              <i className="far fa-file-pdf"> file Name</i>
+            </a>
           </li>
           <li>
-            <a href="#section-4">Section 4</a>
+            <a className="file-button" href="#section-1">
+              <i className="far fa-file-pdf"> file Name</i>
+            </a>
           </li>
           <li>
-            <a href="#section-5">Section 5</a>
-          </li>
-          <li>
-            <a href="#section-6">Section 6</a>
-          </li>
-          <li>
-            <a href="#section-7">Section 7</a>
-          </li>
-          <li>
-            <a href="#section-8">Section 8</a>
-          </li>
-          <li>
-            <a href="#section-9">Section 9</a>
+            <a className="file-button" href="#section-1">
+              <i className="far fa-file-pdf"> file Name</i>
+            </a>
           </li>
         </ul>
       </nav>
@@ -68,8 +71,8 @@ const PDFReader = () => {
         className="d-flex flex-column align-items-center"
       >
         <Document
-          file="/assets/docs/file-sample.pdf"
-          //onLoadSuccess={onDocumentLoadSuccess}
+          onLoadSuccess={onDocumentLoadSuccess}
+          file={showFile}
           className="document-layOut"
         >
           <Page pageNumber={pageNumber} scale={scale} />
