@@ -48,7 +48,7 @@ const ControlPanel = ({
   };
 
   return (
-    <div className="control-panel m-3 p-3 d-flex align-items-baseline justify-content-center">
+    <div className="control-panel ">
       <div className="d-flex justify-content-between align-items-baseline">
         <i
           className={`fas fa-fast-backward mx-3 ${firstPageClass}`}
