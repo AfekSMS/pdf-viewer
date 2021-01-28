@@ -63,7 +63,7 @@ nav {
   position: fixed;
   height: 100%;
   right: 0;
-  background: gray;
+  background: #e5e5e5;
   width: 15%;
   overflow-x: hidden;
   z-index: 1;
@@ -93,4 +93,47 @@ nav ul li a {
 }
 nav ul li a.current {
   background: black;
+}
+
+nav ul li a.file-button {
+  display: block;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+nav ul li a.file-button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+nav ul li a.file-button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #008fb3;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+nav ul li a.file-button:hover {
+  color: #fff;
+}
+nav ul li a.file-button:hover:before {
+  width: 100%;
 }
