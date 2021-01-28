@@ -15,9 +15,22 @@ code {
 .control-panel {
   font-size: 14px;
   color: black;
-  background-color: white;
-  border-radius: 5px;
+  background-color: #0f77ab;
   width: fit-content;
+  display: flex;
+  top: 0px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 50px;
+  padding: 15px;
+  align-items: baseline;
+  position: fixed;
+  z-index: 2;
+}
+
+.document-layOut {
+  position: relative;
+  margin-top: 100px;
 }
 
 .clickable {
