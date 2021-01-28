@@ -16,23 +16,24 @@ const PDFReader = () => {
   }
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Loader isLoading={isLoading} />
+      <ControlPanel
+        scale={scale}
+        setScale={setScale}
+        numPages={numPages}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        file="/assets/docs/file-sample.pdf"
+      />
       <section
         id="pdf-section"
         className="d-flex flex-column align-items-center"
       >
-        <ControlPanel
-          scale={scale}
-          setScale={setScale}
-          numPages={numPages}
-          pageNumber={pageNumber}
-          setPageNumber={setPageNumber}
-          file="/assets/docs/file-sample.pdf"
-        />
         <Document
           file="/assets/docs/file-sample.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
+          className="document-layOut"
         >
           <Page pageNumber={pageNumber} scale={scale} />
         </Document>
