@@ -17,6 +17,8 @@ const ControlPanel = ({
   const lastPageClass = isLastPage ? "disabled" : "clickable";
   const firstPage = isFirstPage ? null : "clickable";
 
+  //numPages - is the amount of pages in a file
+
   const goToFirstPage = () => {
     if (!isFirstPage) setPageNumber(1);
   };
