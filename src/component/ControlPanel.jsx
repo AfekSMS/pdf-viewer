@@ -1,5 +1,6 @@
 import React from "react";
 import PDFPrinter from "./PDFPrinter";
+import PDFSave from "./PDFSave";
 
 const ControlPanel = ({
   file,
@@ -14,6 +15,7 @@ const ControlPanel = ({
 
   const firstPageClass = isFirstPage ? "disabled" : "clickable";
   const lastPageClass = isLastPage ? "disabled" : "clickable";
+  const firstPage = isFirstPage ? null : "clickable";
 
   const goToFirstPage = () => {
     if (!isFirstPage) setPageNumber(1);
@@ -49,6 +51,15 @@ const ControlPanel = ({
 
   return (
     <div className="control-panel ">
+      <i
+        className={`fa fa-home mx-3 homebtn clickable ${firstPage}`}
+        onClick={goToFirstPage}
+      />
+      <img
+        className={`siteLogo `}
+        src={"https://www.sms2010.co.il/new_site/media/SMS_logo.png"}
+        alt="SMS"
+      />
       <div className="d-flex justify-content-between align-items-baseline">
         <i
           className={`fas fa-fast-backward mx-3 ${firstPageClass}`}
@@ -98,6 +109,9 @@ const ControlPanel = ({
       </div>
       <div className="mx-3">
         <PDFPrinter file={file} />
+      </div>
+      <div className="mx-3">
+        <PDFSave file={file} />
       </div>
     </div>
   );
