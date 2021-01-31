@@ -13,6 +13,8 @@ const PDFReader = () => {
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
+    /*console.log(numPages); - to continue from here it prints 4 , meaning it knows it has 4 pages in this current
+                                document and then see how to continue to show on scroll or to see if there is away to load mor then one file.*/
     setisLoading(false);
   }
   function onClickLoadPage() {
